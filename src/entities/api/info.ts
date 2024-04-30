@@ -1,4 +1,4 @@
-import { api } from "shared/config/api/instance";
+import { api } from "entities/config/api/instance";
 
 class InfoService {
   getInfo() {
