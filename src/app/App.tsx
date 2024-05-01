@@ -1,8 +1,14 @@
 import React from "react";
+import { SideBar } from "widgets/SideBar";
+import { AppRouter } from "./providers/router";
 
 const App = () => {
-  console.log("test");
-  return <h1 className="app">Welcom in Futurama</h1>;
+  return (
+    <div>
+      <SideBar />
+      <AppRouter />
+    </div>
+  );
 };
 
 export default App;
