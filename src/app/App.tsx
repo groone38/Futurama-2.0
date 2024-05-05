@@ -1,11 +1,11 @@
 import React from "react";
-import { SideBar } from "widgets/SideBar";
+import { NavBar } from "widgets/NavBar";
 import { AppRouter } from "./providers/router";
 
 const App = () => {
   return (
     <div>
-      <SideBar />
+      <NavBar />
       <AppRouter />
     </div>
   );
