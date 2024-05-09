@@ -1,12 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { infoService } from "entities/api/variabels";
-import { infoActions } from "../slice/infoSlice";
+import api from "entities/api/variabels";
 
-export const getInfo = createAsyncThunk(
-  "info/fetchInfo",
+export const getCast = createAsyncThunk(
+  "cast/fetchCast",
   async (_, thunkAPI) => {
     try {
-      const { data } = await infoService.getInfo();
+      const { data } = await api.castService.getCast();
 
       if (!data) {
         throw new Error();
@@ -14,7 +13,7 @@ export const getInfo = createAsyncThunk(
 
       //   thunkAPI.dispatch(infoActions.setInfoData(data[0]));
 
-      return data[0];
+      return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error);
     }

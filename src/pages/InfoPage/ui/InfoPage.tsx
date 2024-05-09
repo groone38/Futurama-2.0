@@ -1,19 +1,11 @@
 import { useAppDispatch, useAppSelector } from "app/providers/store";
-import axios from "axios";
-import { getInfo } from "entities/Info";
+import { getInfo, getInfoState } from "entities/model/Info";
 
-import { infoService } from "entities/api/variabels";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 export const InfoPage = () => {
-  const dispatch = useAppDispatch();
-  const data = useAppSelector((state) => state.info);
+  const data = useAppSelector(getInfoState);
 
-  useEffect(() => {
-    dispatch(getInfo());
-  }, []);
-
-  // console.log(data);
   return (
     <>
       {data.isLoading ? <h1>Loading...</h1> : <span>{data.info.synopsis}</span>}

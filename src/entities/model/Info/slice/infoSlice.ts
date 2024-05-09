@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { Info, InfoSchema } from "../types/info";
-import { getInfo } from "entities/Info";
+import { getInfo } from "entities/model/Info";
 
 const initialState: InfoSchema = {
   isLoading: false,
@@ -8,8 +8,8 @@ const initialState: InfoSchema = {
     creators: [],
     id: null,
     synopsis: null,
-    yearsAired: null
-  }
+    yearsAired: null,
+  },
 };
 
 export const infoSlice = createSlice({

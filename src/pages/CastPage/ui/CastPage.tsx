@@ -1,6 +1,16 @@
-import React from "react";
+import { useAppSelector } from "app/providers/store";
+import { getCastState } from "entities/model/Cast";
 
 export const CastPage = () => {
-  console.log("qwe");
-  return <div>CastPage</div>;
+  const data = useAppSelector(getCastState);
+
+  return (
+    <>
+      {data.isLoading ? (
+        <h1>Loading...</h1>
+      ) : (
+        data.cast.map((item) => <span>{item.name}</span>)
+      )}
+    </>
+  );
 };
