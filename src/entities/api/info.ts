@@ -1,4 +1,4 @@
-import { Info } from "entities/Info";
+import { Info } from "entities/model/Info";
 import { api } from "entities/config/api/instance";
 
 class InfoService {
