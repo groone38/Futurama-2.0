@@ -1,16 +1,24 @@
-import { useAppSelector } from "app/providers/store";
-import { getCastState } from "entities/model/Cast";
+import { useAppDispatch, useAppSelector } from "app/providers/store";
+import { getCast, getCastState } from "entities/model/Cast";
+import { useEffect } from "react";
 
-export const CastPage = () => {
-  const data = useAppSelector(getCastState);
+const CastPage = () => {
+  const dispatch = useAppDispatch();
+  const { isLoading, cast } = useAppSelector(getCastState);
+
+  useEffect(() => {
+    dispatch(getCast());
+  }, []);
 
   return (
     <>
-      {data.isLoading ? (
+      {isLoading ? (
         <h1>Loading...</h1>
       ) : (
-        data.cast.map((item) => <span>{item.name}</span>)
+        cast.map((item) => <span>{item.name}</span>)
       )}
     </>
   );
 };
+
+export default CastPage;

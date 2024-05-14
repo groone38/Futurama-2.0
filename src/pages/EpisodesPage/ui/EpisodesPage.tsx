@@ -1,9 +1,15 @@
-import { useAppSelector } from "app/providers/store";
-import { getEpisodesState } from "entities/model/Episodes";
-import React from "react";
+import { useAppDispatch, useAppSelector } from "app/providers/store";
+import { getEpisodes, getEpisodesState } from "entities/model/Episodes";
+import React, { useEffect } from "react";
 
-export const EpisodesPage = () => {
+const EpisodesPage = () => {
+  const dispatch = useAppDispatch();
   const { isLoading, episodes } = useAppSelector(getEpisodesState);
+
+  useEffect(() => {
+    dispatch(getEpisodes());
+  }, []);
+
   return (
     <>
       {isLoading ? (
@@ -14,3 +20,5 @@ export const EpisodesPage = () => {
     </>
   );
 };
+
+export default EpisodesPage;

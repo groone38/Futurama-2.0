@@ -3,12 +3,15 @@ import { getInfo, getInfoState } from "entities/model/Info";
 
 import { useEffect } from "react";
 
-export const InfoPage = () => {
-  const data = useAppSelector(getInfoState);
+const InfoPage = () => {
+  const dispatch = useAppDispatch();
+  const { isLoading, info } = useAppSelector(getInfoState);
 
-  return (
-    <>
-      {data.isLoading ? <h1>Loading...</h1> : <span>{data.info.synopsis}</span>}
-    </>
-  );
+  useEffect(() => {
+    dispatch(getInfo());
+  }, []);
+
+  return <>{isLoading ? <h1>Loading...</h1> : <span>{info.synopsis}</span>}</>;
 };
+
+export default InfoPage;

@@ -1,1 +1,1 @@
-export { InfoPage } from "./ui/InfoPage";
+export { InfoPageAsync as InfoPage } from "./ui/InfoPageAsync";

@@ -1,1 +1,1 @@
-export { CastPage } from "./ui/CastPage";
+export { CastPageAsync as CastPage } from "./ui/CastPageAsync";

@@ -4,6 +4,7 @@ import { getCharacters } from "../services/getCharacters";
 
 const initialState: CharactersSchema = {
   isLoading: false,
+  characters: [],
 };
 
 export const charactersSlice = createSlice({

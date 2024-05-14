@@ -1,1 +1,1 @@
-export { InventoryPage } from "./ui/InventoryPage";
+export { InventoryPageAsync as InventoryPage } from "./ui/InventoryPageAsync";

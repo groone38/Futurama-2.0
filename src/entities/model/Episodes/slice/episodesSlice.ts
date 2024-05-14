@@ -3,6 +3,7 @@ import { Episodes, EpisodesSchema, getEpisodes } from "../";
 
 const initialState: EpisodesSchema = {
   isLoading: false,
+  episodes: []
 };
 
 export const episodesSlice = createSlice({

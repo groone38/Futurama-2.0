@@ -1,9 +1,15 @@
-import { useAppSelector } from "app/providers/store";
-import { getInventoryState } from "entities/model/Inventory";
-import React from "react";
+import { useAppDispatch, useAppSelector } from "app/providers/store";
+import { getInventory, getInventoryState } from "entities/model/Inventory";
+import React, { useEffect } from "react";
 
-export const InventoryPage = () => {
+const InventoryPage = () => {
+  const dispatch = useAppDispatch();
   const { isLoading, inventory } = useAppSelector(getInventoryState);
+
+  useEffect(() => {
+    dispatch(getInventory());
+  }, []);
+
   return (
     <>
       {isLoading ? (
@@ -14,3 +20,5 @@ export const InventoryPage = () => {
     </>
   );
 };
+
+export default InventoryPage;
