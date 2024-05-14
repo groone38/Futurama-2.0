@@ -7,6 +7,7 @@ import { getCast } from "entities/model/Cast";
 import { getCharacters } from "entities/model/Characters";
 import { getEpisodes } from "entities/model/Episodes";
 import { getInventory } from "entities/model/Inventory";
+import "./styles/index.scss";
 
 const App = () => {
   const dispatch = useAppDispatch();
@@ -20,7 +21,7 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <div className="app">
       <NavBar />
       <AppRouter />
     </div>
