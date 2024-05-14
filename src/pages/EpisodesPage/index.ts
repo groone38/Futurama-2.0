@@ -1,1 +1,1 @@
-export { EpisodesPage } from "./ui/EpisodesPage";
+export { EpisodesPageAsync as EpisodesPage } from "./ui/EpisodesPageAsync";

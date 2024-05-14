@@ -14,5 +14,3 @@ class Api {
 
 const api = new Api();
 export default api;
-// export const infoService = new InfoService();
-// export const castService = new CastService();

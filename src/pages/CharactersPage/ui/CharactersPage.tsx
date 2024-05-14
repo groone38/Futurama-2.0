@@ -1,14 +1,21 @@
-import { useAppSelector } from "app/providers/store";
-import { getCharactersState } from "entities/model/Characters";
+import { useAppDispatch, useAppSelector } from "app/providers/store";
+import { getCharacters, getCharactersState } from "entities/model/Characters";
+import { useEffect } from "react";
 
-export const CharactersPage = () => {
-  const data = useAppSelector(getCharactersState);
+const CharactersPage = () => {
+  const dispatch = useAppDispatch();
+  const { isLoading, characters } = useAppSelector(getCharactersState);
+
+  useEffect(() => {
+    dispatch(getCharacters());
+  }, []);
+
   return (
     <>
-      {data.isLoading ? (
+      {isLoading ? (
         <h1>Loading...</h1>
       ) : (
-        data.characters.map((item) => (
+        characters.map((item) => (
           <span>
             {item.name.first} {item.name.middle} {item.name.last}
           </span>
@@ -17,3 +24,5 @@ export const CharactersPage = () => {
     </>
   );
 };
+
+export default CharactersPage;

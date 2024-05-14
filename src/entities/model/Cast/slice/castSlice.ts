@@ -4,6 +4,7 @@ import { getCast } from "../services/getCast";
 
 const initialState: CastSchema = {
   isLoading: false,
+  cast: [],
 };
 
 export const castSlice = createSlice({

@@ -3,6 +3,7 @@ import { Inventory, InventorySchema, getInventory } from "../";
 
 const initialState: InventorySchema = {
   isLoading: false,
+  inventory: [],
 };
 
 export const inventorySlice = createSlice({
