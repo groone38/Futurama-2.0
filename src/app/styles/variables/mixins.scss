@@ -1,0 +1,55 @@
+@import "./colors.scss";
+
+@mixin h1() {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 48px;
+}
+
+@mixin h2() {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 36px;
+}
+
+@mixin h3() {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+@mixin h4() {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+@mixin p() {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+@mixin lead() {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+@mixin large() {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+@mixin small() {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 14px;
+}
+
+@mixin subtitle() {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}

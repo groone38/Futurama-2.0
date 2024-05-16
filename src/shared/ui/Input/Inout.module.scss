@@ -1,0 +1,46 @@
+@import "/src/app/styles/variables/colors.scss";
+@import "/src/app/styles/variables/mixins.scss";
+
+.InputWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.placeholder {
+  @include small();
+  color: $color-900;
+  margin-bottom: 6px;
+}
+
+.input {
+  outline: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  border: 1px solid $color-300;
+  background: rgba(255, 255, 255, 1);
+  margin-bottom: 6px;
+  @include p();
+
+  &:focus {
+    border: 2px solid $color-400;
+  }
+
+  &::placeholder {
+    color: $color-400;
+  }
+
+  &:disabled {
+    border: 1px solid $color-400;
+    color: $color-400;
+  }
+}
+
+.helper {
+  @include subtitle();
+  color: $color-500;
+}
+
+.disabled {
+  color: $color-400;
+}
