@@ -21,7 +21,14 @@ export interface Img {
   main: string;
 }
 
-export interface CharactersSchema {
-  characters?: Characters[];
+export interface Schema {
   isLoading: boolean;
+}
+
+export interface CharactersSchema extends Schema {
+  characters: Record<number, Characters>;
+}
+
+export interface CharacterSchema extends Schema {
+  character: Characters;
 }

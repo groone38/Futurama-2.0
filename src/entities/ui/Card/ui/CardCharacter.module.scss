@@ -1,0 +1,30 @@
+@import "/src/app/styles/variables/colors.scss";
+
+.Card {
+  border: 1px solid $color-200;
+  padding: 17px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 6px;
+  box-shadow: 5px 5px 5px rgba(174, 174, 174, 0.25);
+  transition: all 0.5s;
+
+  img {
+    width: 130px;
+    height: 200px;
+    margin-right: 25px;
+  }
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.22);
+    z-index: 10;
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

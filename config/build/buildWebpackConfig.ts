@@ -21,6 +21,8 @@ export function buildWebpackConfig(
       filename: "[name].[contenthash].js",
       path: paths.build,
       clean: true,
+      // для динамических роутов
+      publicPath: "/",
     },
     plugins: buildPlugins(options),
     devtool: isDev ? "inline-source-map" : undefined,

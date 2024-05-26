@@ -1,15 +1,21 @@
-import React, { useState } from "react";
-import { Input } from "shared/ui/Input";
+import React, { useEffect, useMemo, useState } from "react";
+import { Input } from "shared/ui/Input/Input";
 
-export const Search = () => {
-  const [searchValue, setSearchValue] = useState<string>("");
+interface ISearch {
+  placeholder?: string;
+  helper?: string;
+  search: string;
+  setSearch: (value: string) => void;
+}
+
+export const Search = ({ placeholder, helper, search, setSearch }: ISearch) => {
   return (
     <div>
       <Input
-        value={searchValue}
-        onChange={setSearchValue}
-        placeholder="Email"
-        helper="Enter your email address"
+        value={search}
+        onChange={setSearch}
+        placeholder={placeholder}
+        helper={helper}
       />
     </div>
   );

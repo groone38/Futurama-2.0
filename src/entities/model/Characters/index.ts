@@ -3,7 +3,12 @@ export {
   NameCharacters,
   Img,
   CharactersSchema,
+  CharacterSchema,
 } from "./types/characters";
-export { getCharacters } from "./services/getCharacters";
+export { getCharacters, getCharacter } from "./services/Characters";
 export { cahractersActions, cahractersReducer } from "./slice/charactersSlice";
-export { getCharactersState } from "./selectors/getCharactersState";
+export { cahracterActions, cahracterReducer } from "./slice/characterSlice";
+export {
+  getCharactersState,
+  getCharacterState,
+} from "./selectors/CharactersState";

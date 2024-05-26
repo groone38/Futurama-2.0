@@ -1,0 +1,15 @@
+.CharacterPage {
+  display: flex;
+  gap: 10px;
+
+  img {
+    width: 250px;
+    height: 350px;
+  }
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

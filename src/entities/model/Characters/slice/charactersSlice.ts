@@ -1,10 +1,10 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { Characters, CharactersSchema } from "../types/characters";
-import { getCharacters } from "../services/getCharacters";
+import { getCharacters } from "../services/Characters";
 
 const initialState: CharactersSchema = {
   isLoading: false,
-  characters: [],
+  characters: {},
 };
 
 export const charactersSlice = createSlice({
@@ -17,7 +17,7 @@ export const charactersSlice = createSlice({
     });
     builder.addCase(
       getCharacters.fulfilled,
-      (state, action: PayloadAction<Characters[]>) => {
+      (state, action: PayloadAction<Record<number, Characters>>) => {
         state.isLoading = false;
         state.characters = action.payload;
       }

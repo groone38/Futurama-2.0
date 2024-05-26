@@ -3,7 +3,7 @@ import { castReducer } from "entities/model/Cast";
 import { infoReducer } from "entities/model/Info";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { StateSchema } from "./types";
-import { cahractersReducer } from "entities/model/Characters";
+import { cahracterReducer, cahractersReducer } from "entities/model/Characters";
 import { episodesReducer } from "entities/model/Episodes";
 import { inventoryReducer } from "entities/model/Inventory";
 
@@ -14,6 +14,7 @@ export const store = configureStore<StateSchema>({
     characters: cahractersReducer,
     episodes: episodesReducer,
     inventory: inventoryReducer,
+    character: cahracterReducer
   },
 });
 
