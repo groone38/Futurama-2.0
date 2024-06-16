@@ -22,7 +22,7 @@ interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button = ({
   className,
   children,
-  stylebutton,
+  stylebutton = StyleButton.DEFAULT,
   disabled,
   ...other
 }: IButton) => {
